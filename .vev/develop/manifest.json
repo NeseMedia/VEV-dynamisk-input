@@ -1,0 +1,596 @@
+{
+  "key": "3pSOyLAhwORSWcofgHMm",
+  "public": 0,
+  "admin": false,
+  "children": [
+    {
+      "widgetName": "Form Display",
+      "name": "Form Display",
+      "widgetId": "3pSOyLAhwORSWcofgHMm_FormDisplay",
+      "key": "3pSOyLAhwORSWcofgHMm_FormDisplay",
+      "pkg": "3pSOyLAhwORSWcofgHMm",
+      "formSchema": [
+        {
+          "name": "type",
+          "type": "select",
+          "title": "Type visning",
+          "options": {
+            "items": [
+              {
+                "label": "Tekst",
+                "value": "text"
+              },
+              {
+                "label": "Tall",
+                "value": "number"
+              },
+              {
+                "label": "Beregning",
+                "value": "calculation"
+              }
+            ]
+          },
+          "initialValue": "number"
+        },
+        {
+          "name": "variableIds",
+          "type": "array",
+          "title": "Variabler å overvåke",
+          "of": [
+            {
+              "type": "string",
+              "name": "variableId",
+              "title": "Variabel ID"
+            }
+          ],
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "title": "Ledetekst"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "title": "Beskrivelse"
+        },
+        {
+          "name": "formula",
+          "type": "string",
+          "title": "Formel (for beregning)"
+        },
+        {
+          "name": "formatOptions",
+          "type": "object",
+          "title": "Formateringsvalg",
+          "fields": [
+            {
+              "name": "style",
+              "type": "select",
+              "title": "Format stil",
+              "options": {
+                "items": [
+                  {
+                    "label": "Desimaltall",
+                    "value": "decimal"
+                  },
+                  {
+                    "label": "Valuta",
+                    "value": "currency"
+                  },
+                  {
+                    "label": "Prosent",
+                    "value": "percent"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "currency",
+              "type": "string",
+              "title": "Valuta (f.eks NOK)"
+            },
+            {
+              "name": "minimumFractionDigits",
+              "type": "number",
+              "title": "Min. desimaler"
+            },
+            {
+              "name": "maximumFractionDigits",
+              "type": "number",
+              "title": "Maks. desimaler"
+            }
+          ]
+        },
+        {
+          "name": "displayStyle",
+          "type": "select",
+          "title": "Visningsstil",
+          "options": {
+            "items": [
+              {
+                "label": "Standard",
+                "value": "standard"
+              },
+              {
+                "label": "Kompakt",
+                "value": "compact"
+              },
+              {
+                "label": "Stor",
+                "value": "large"
+              }
+            ]
+          },
+          "initialValue": "standard"
+        },
+        {
+          "name": "prefix",
+          "type": "string",
+          "title": "Prefiks"
+        },
+        {
+          "name": "suffix",
+          "type": "string",
+          "title": "Suffiks"
+        }
+      ],
+      "type": 0,
+      "widgetFuncName": "FormDisplay",
+      "categories": [
+        "Localhost"
+      ],
+      "size": [
+        3,
+        3
+      ],
+      "transform": {
+        "width": 100,
+        "height": 100
+      },
+      "metaData": [
+        {
+          "selector": ".container__styles",
+          "name": ""
+        },
+        {
+          "selector": ".label__styles",
+          "name": ""
+        },
+        {
+          "selector": ".description__styles",
+          "name": ""
+        },
+        {
+          "selector": ".display__styles",
+          "name": ""
+        },
+        {
+          "selector": ".displayValue__styles",
+          "name": ""
+        },
+        {
+          "selector": ".displayAffix__styles",
+          "name": ""
+        }
+      ],
+      "editableCSScomputed": {
+        ".container__styles": {
+          "background": null,
+          "background-color": null,
+          "padding": null,
+          "margin": null,
+          "border-radius": null,
+          "box-shadow": null,
+          "border": null
+        },
+        ".label__styles": {
+          "color": "#374151",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": "500",
+          "line-height": null,
+          "margin-bottom": "0.75rem",
+          "text-transform": null,
+          "letter-spacing": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        ".description__styles": {
+          "color": "#6b7280",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": null,
+          "line-height": "1.25",
+          "margin-bottom": "1rem",
+          "text-transform": null,
+          "letter-spacing": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        ".display__styles": {
+          "background": "#f9fafb",
+          "background-color": null,
+          "border-radius": "0.75rem",
+          "padding": "1.5rem",
+          "box-shadow": null,
+          "border": null
+        },
+        ".displayValue__styles": {
+          "color": "#1f2937",
+          "font-family": null,
+          "font-size": "1.5rem",
+          "font-weight": "600",
+          "line-height": null,
+          "letter-spacing": null,
+          "text-transform": null,
+          "background": null,
+          "background-color": null,
+          "padding": null,
+          "border-radius": null
+        },
+        ".displayAffix__styles": {
+          "color": "#6b7280",
+          "font-family": null,
+          "font-size": "1rem",
+          "font-weight": "normal",
+          "line-height": null,
+          "letter-spacing": null,
+          "text-transform": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        }
+      },
+      "shareWithAccount": false,
+      "admin": false,
+      "content": "",
+      "updated": 1736977079223,
+      "created": 1736977079223
+    },
+    {
+      "widgetName": "Form Input",
+      "name": "Form Input",
+      "widgetId": "3pSOyLAhwORSWcofgHMm_FormInput",
+      "key": "3pSOyLAhwORSWcofgHMm_FormInput",
+      "pkg": "3pSOyLAhwORSWcofgHMm",
+      "formSchema": [
+        {
+          "name": "type",
+          "type": "select",
+          "title": "Type input",
+          "options": {
+            "items": [
+              {
+                "label": "Tekst",
+                "value": "text"
+              },
+              {
+                "label": "Tall",
+                "value": "number"
+              },
+              {
+                "label": "Nedtrekksliste",
+                "value": "select"
+              },
+              {
+                "label": "Radio knapper",
+                "value": "radio"
+              },
+              {
+                "label": "Ja/Nei",
+                "value": "boolean"
+              }
+            ]
+          },
+          "initialValue": "text"
+        },
+        {
+          "name": "variableId",
+          "type": "string",
+          "title": "Variabel ID",
+          "required": true
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "title": "Ledetekst"
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "title": "Beskrivelse"
+        },
+        {
+          "name": "options",
+          "type": "array",
+          "title": "Alternativer (for select/radio)",
+          "of": [
+            {
+              "name": "option",
+              "type": "object",
+              "fields": [
+                {
+                  "name": "label",
+                  "type": "string",
+                  "title": "Tekst"
+                },
+                {
+                  "name": "value",
+                  "type": "string",
+                  "title": "Verdi"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "suffix",
+          "type": "string",
+          "title": "Suffiks"
+        },
+        {
+          "name": "prefix",
+          "type": "string",
+          "title": "Prefiks"
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "title": "Placeholder"
+        },
+        {
+          "name": "initialValue",
+          "type": "string",
+          "title": "Startverdi",
+          "initialValue": "0"
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "title": "Minimumsverdi"
+        },
+        {
+          "name": "max",
+          "type": "number",
+          "title": "Maksimumsverdi"
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "title": "Påkrevd",
+          "initialValue": false
+        },
+        {
+          "name": "displayStyle",
+          "type": "select",
+          "title": "Visningsstil",
+          "options": {
+            "items": [
+              {
+                "label": "Standard",
+                "value": "standard"
+              },
+              {
+                "label": "Kompakt",
+                "value": "compact"
+              },
+              {
+                "label": "Stor",
+                "value": "large"
+              }
+            ]
+          },
+          "initialValue": "standard"
+        }
+      ],
+      "type": 0,
+      "widgetFuncName": "FormInput",
+      "categories": [
+        "Localhost"
+      ],
+      "size": [
+        3,
+        3
+      ],
+      "transform": {
+        "width": 100,
+        "height": 100
+      },
+      "metaData": [
+        {
+          "selector": ".container__styles",
+          "name": ""
+        },
+        {
+          "selector": ".label__styles",
+          "name": ""
+        },
+        {
+          "selector": ".description__styles",
+          "name": ""
+        },
+        {
+          "selector": ".input__styles",
+          "name": ""
+        },
+        {
+          "selector": ".select__styles",
+          "name": ""
+        },
+        {
+          "selector": ".radioGroup__styles",
+          "name": ""
+        },
+        {
+          "selector": ".radioLabel__styles",
+          "name": ""
+        },
+        {
+          "selector": ".radio__styles",
+          "name": ""
+        },
+        {
+          "selector": ".checkbox__styles",
+          "name": ""
+        },
+        {
+          "selector": ".affix__styles",
+          "name": ""
+        },
+        {
+          "selector": "radioLabel__styles span",
+          "name": ""
+        },
+        {
+          "selector": "option",
+          "name": ""
+        }
+      ],
+      "editableCSScomputed": {
+        ".container__styles": {
+          "background": null,
+          "background-color": null,
+          "padding": null,
+          "margin": null,
+          "border-radius": null,
+          "box-shadow": null
+        },
+        ".label__styles": {
+          "color": "#374151",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": "500",
+          "line-height": null,
+          "margin-bottom": "0.75rem",
+          "text-transform": null,
+          "letter-spacing": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        ".description__styles": {
+          "color": "#6b7280",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": null,
+          "line-height": "1.25",
+          "margin-bottom": "1rem",
+          "text-transform": null,
+          "letter-spacing": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        ".input__styles": {
+          "background": "white",
+          "background-color": null,
+          "color": "#1f2937",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": null,
+          "line-height": "1.25rem",
+          "letter-spacing": null,
+          "text-transform": null,
+          "border": "1px solid #e5e7eb",
+          "border-radius": "0.5rem",
+          "padding": "0.625rem 1rem",
+          "box-shadow": null
+        },
+        ".select__styles": {
+          "background": "white",
+          "background-color": null,
+          "color": "#1f2937",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": null,
+          "line-height": "1.25rem",
+          "letter-spacing": null,
+          "text-transform": null,
+          "border": "1px solid #e5e7eb",
+          "border-radius": "0.5rem",
+          "padding": "0.625rem 1rem",
+          "box-shadow": null
+        },
+        ".radioGroup__styles": {
+          "background": null,
+          "background-color": null,
+          "padding": null,
+          "border-radius": null,
+          "border": null,
+          "box-shadow": null
+        },
+        ".radioLabel__styles": {
+          "color": null,
+          "font-family": null,
+          "font-size": null,
+          "font-weight": null,
+          "line-height": null,
+          "letter-spacing": null,
+          "text-transform": null,
+          "padding": "0.5rem",
+          "background": null,
+          "background-color": null,
+          "border-radius": "0.375rem",
+          "border": null
+        },
+        ".radio__styles": {
+          "border-color": null,
+          "background-color": null,
+          "width": "1rem",
+          "height": "1rem",
+          "box-shadow": null
+        },
+        ".checkbox__styles": {
+          "border-color": null,
+          "background-color": null,
+          "width": "1rem",
+          "height": "1rem",
+          "box-shadow": null
+        },
+        ".affix__styles": {
+          "color": "#6b7280",
+          "font-family": null,
+          "font-size": "0.875rem",
+          "font-weight": null,
+          "line-height": null,
+          "letter-spacing": null,
+          "text-transform": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        "radioLabel__styles span": {
+          "color": null,
+          "font-family": null,
+          "font-size": null,
+          "font-weight": null,
+          "line-height": null,
+          "letter-spacing": null,
+          "text-transform": null,
+          "background": null,
+          "background-color": null,
+          "padding": null
+        },
+        "option": {
+          "color": null,
+          "font-family": null,
+          "font-size": null,
+          "font-weight": null,
+          "line-height": null,
+          "background": null,
+          "background-color": null
+        }
+      },
+      "shareWithAccount": false,
+      "admin": false,
+      "content": "",
+      "updated": 1736977079230,
+      "created": 1736977079230
+    }
+  ],
+  "shareWithAccount": false
+}
