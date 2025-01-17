@@ -223,4 +223,100 @@
   .displayValue {
     font-size: 2rem;
   }
-} 
+}
+
+/* Modern Slider styles */
+.sliderContainer {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #3b82f6 var(--slider-progress, 0%), #e5e7eb var(--slider-progress, 0%));
+  border-radius: 3px;
+  outline: none;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Track focus effect */
+.slider:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Thumb styles */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  top: 50%;
+}
+
+.slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 2px solid #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover states */
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  background: #f8fafc;
+}
+
+.slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  background: #f8fafc;
+}
+
+/* Active states */
+.slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.slider::-moz-range-thumb:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.1);
+  background: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.sliderValue {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  padding: 0 2px;
+}
+
+.sliderMaxValue {
+  color: #6b7280;
+}
+
+/* Remove old reset button styles */
+ 

@@ -37,6 +37,27 @@ const FormInput = ({
     };
   }, [variableId, initialValue]);
 
+  // Lytter til endringer i andre komponenter med samme variableId
+  useEffect(() => {
+    const handleVariableUpdate = (event) => {
+      const { id, value } = event.detail;
+      if (id === variableId) {
+        setValue(value);
+      }
+    };
+
+    window.addEventListener('vevVariableUpdate', handleVariableUpdate);
+    
+    // Hent initial verdi hvis den finnes
+    if (window.vevVariables && window.vevVariables[variableId] !== undefined) {
+      setValue(window.vevVariables[variableId]);
+    }
+
+    return () => {
+      window.removeEventListener('vevVariableUpdate', handleVariableUpdate);
+    };
+  }, [variableId]);
+
   // Oppdatert updateValue funksjon med bedre type-håndtering
   const updateValue = (newValue) => {
     // Konverterer til string for konsistent håndtering
@@ -90,6 +111,35 @@ const FormInput = ({
                 {suffix}
               </span>
             )}
+          </div>
+        );
+
+      case 'slider':
+        const sliderValue = parseFloat(value) || 0;
+        const sliderMin = min || 0;
+        const sliderMax = max || 100;
+        const progress = ((sliderValue - sliderMin) / (sliderMax - sliderMin)) * 100;
+        
+        return (
+          <div className={styles.sliderContainer}>
+            <input
+              type="range"
+              value={sliderValue}
+              onChange={(e) => updateValue(e.target.value)}
+              min={sliderMin}
+              max={sliderMax}
+              className={styles.slider}
+              style={{ '--slider-progress': `${progress}%` }}
+            />
+            <div className={styles.sliderValue}>
+              <span>
+                {sliderValue}
+                {suffix && <span className={styles.displayAffix}>{suffix}</span>}
+              </span>
+              <span className={styles.sliderMaxValue}>
+                {sliderMax}{suffix && <span className={styles.displayAffix}>{suffix}</span>}
+              </span>
+            </div>
           </div>
         );
 
@@ -177,6 +227,7 @@ registerVevComponent(FormInput, {
         items: [
           { label: "Tekst", value: "text" },
           { label: "Tall", value: "number" },
+          { label: "Slider", value: "slider" },
           { label: "Nedtrekksliste", value: "select" },
           { label: "Radio knapper", value: "radio" },
           { label: "Ja/Nei", value: "boolean" }
@@ -434,6 +485,49 @@ registerVevComponent(FormInput, {
         'line-height',
         'background',
         'background-color'
+      ]
+    },
+    {
+      selector: styles.slider,
+      properties: [
+        'background',
+        'background-color'
+      ]
+    },
+    {
+      selector: `${styles.slider}::-webkit-slider-thumb`,
+      properties: [
+        'background',
+        'background-color'
+      ]
+    },
+    {
+      selector: `${styles.slider}::-moz-range-thumb`,
+      properties: [
+        'background',
+        'background-color'
+      ]
+    },
+    {
+      selector: styles.sliderValue,
+      properties: [
+        'color',
+        'font-family',
+        'font-size',
+        'font-weight',
+        'line-height',
+        'letter-spacing'
+      ]
+    },
+    {
+      selector: styles.sliderMaxValue,
+      properties: [
+        'color',
+        'font-family',
+        'font-size',
+        'font-weight',
+        'line-height',
+        'letter-spacing'
       ]
     }
   ]
